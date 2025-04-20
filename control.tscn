@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdgmxgvjvf8ip"]
+
+[ext_resource type="Theme" uid="uid://dgd6okqyrey1p" path="res://ButtonTheme.tres" id="1_0fbet"]
+[ext_resource type="Script" uid="uid://chdd624f5hcpn" path="res://control.gd" id="1_62e2m"]
+[ext_resource type="FontFile" uid="uid://lekl1b2qiepr" path="res://FancyPixelFont.ttf" id="3_qtu10"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_62e2m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.457378, 0.63498, 0.674329, 1)
+
+[node name="ButtonHbox" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -224.5
+offset_right = 540.0
+offset_bottom = 224.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Activity1B" type="Button" parent="ButtonHbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_0fbet")
+text = "ACTIVTIY 1"
+
+[node name="DungeonB" type="Button" parent="ButtonHbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_0fbet")
+text = "DUNGEON"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -497.0
+offset_top = 163.0
+offset_right = 502.0
+offset_bottom = 411.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_qtu10")
+theme_override_font_sizes/font_size = 130
+text = "AWESOME GAME!"
+
+[connection signal="pressed" from="ButtonHbox/DungeonB" to="." method="_on_dungeon_b_pressed"]

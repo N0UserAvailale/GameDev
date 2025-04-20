@@ -1,0 +1,98 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb0cpbn6psnkd"]
+
+[ext_resource type="Texture2D" uid="uid://c1bw01hjeopl4" path="res://TestBG.jpg" id="1_nulmw"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainVBContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopSection" type="Control" parent="MainVBContainer"]
+custom_minimum_size = Vector2(0, 850)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MainVBContainer/TopSection"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nulmw")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="BattleField" type="Node2D" parent="MainVBContainer/TopSection"]
+
+[node name="QuestionLabel" type="Label" parent="MainVBContainer/TopSection"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -22.3333
+offset_right = 130.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Example: What does Ignite mean?"
+
+[node name="ColorRect" type="ColorRect" parent="MainVBContainer"]
+layout_mode = 2
+
+[node name="BottomSection" type="Control" parent="MainVBContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="MainVBContainer/BottomSection"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.168785, 0.235582, 0.289933, 1)
+
+[node name="QuizOptions" type="GridContainer" parent="MainVBContainer/BottomSection"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Ans1" type="Button" parent="MainVBContainer/BottomSection/QuizOptions"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Ans2" type="Button" parent="MainVBContainer/BottomSection/QuizOptions"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Ans3" type="Button" parent="MainVBContainer/BottomSection/QuizOptions"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Ans4" type="Button" parent="MainVBContainer/BottomSection/QuizOptions"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
