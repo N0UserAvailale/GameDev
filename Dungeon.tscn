@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb0cpbn6psnkd"]
+[gd_scene load_steps=3 format=3 uid="uid://bb0cpbn6psnkd"]
 
 [ext_resource type="Texture2D" uid="uid://c1bw01hjeopl4" path="res://TestBG.jpg" id="1_nulmw"]
+[ext_resource type="Script" uid="uid://ccb561hy2yqto" path="res://GameController.gd" id="1_sifhu"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -9,6 +10,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="GameController" type="Node" parent="."]
+script = ExtResource("1_sifhu")
 
 [node name="MainVBContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -96,3 +100,8 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[connection signal="pressed" from="MainVBContainer/BottomSection/QuizOptions/Ans1" to="GameController" method="_on_answer_button_pressed"]
+[connection signal="pressed" from="MainVBContainer/BottomSection/QuizOptions/Ans2" to="GameController" method="_on_answer_button_pressed"]
+[connection signal="pressed" from="MainVBContainer/BottomSection/QuizOptions/Ans3" to="GameController" method="_on_answer_button_pressed"]
+[connection signal="pressed" from="MainVBContainer/BottomSection/QuizOptions/Ans4" to="GameController" method="_on_answer_button_pressed"]
